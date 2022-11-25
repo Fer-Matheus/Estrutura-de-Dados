@@ -36,5 +36,6 @@
 CalculadoraPolonesa calc = new(10);
 
 System.Console.WriteLine("Escreva uma função no estilo polones:");
-System.Console.WriteLine(calc.Insere(Console.ReadLine()));
+calc.Insere(Console.ReadLine());
 
+System.Console.WriteLine(calc.RetornaCalc());

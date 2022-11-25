@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Codes
@@ -9,27 +10,31 @@ namespace Codes
     {
         public Pilha Pilha { get; set; }
         private double op1, op2;
+        private double result;
         public CalculadoraPolonesa(int tamanho)
         {
             Pilha = new(tamanho);
             op1 = op2 = 0;
         }
-        public double Insere(string func)
+        public void Insere(string func)
         {
-            double result;
+            func = Regex.Replace(func, @"[\()]", "");
             string[] passos = func.Split(" ");
             foreach (var item in passos)
             {
-                if (int.TryParse(item, out int j))
+                if (double.TryParse(item.ToString(), out double j))
                 {
                     Pilha.Push(j);
                 }
-                else
+                else if (item != "")
                 {
                     Action(item);
                 }
             }
             result = double.Parse(Pilha.Pop().ToString());
+        }
+        public double RetornaCalc()
+        {
             return result;
         }
 
