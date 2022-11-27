@@ -15,7 +15,7 @@ public class Pilha
     }
     public Object ShowTop()
     {
-        if (!IsEmpty()) { System.Console.WriteLine("Pilha Vazia!"); }
+        if (IsEmpty()) return null;
         return Vetor[Top];
     }
     public bool IsEmpty()
@@ -42,6 +42,7 @@ public class Pilha
         if (!IsEmpty())
         {
             var obj = Vetor[Top];
+            Vetor[Top] = null;
             Top--;
             return obj;
         }
@@ -61,12 +62,13 @@ public class Pilha
     }
     public void Show()
     {
-        if (IsEmpty())
+        if (!IsEmpty())
         {
             for (int i = Top; i >= 0; i--)
             {
                 System.Console.WriteLine(Vetor[i]);
             }
+            System.Console.WriteLine();
         }
         else
         {

@@ -40,8 +40,15 @@ namespace Codes
 
         private void Action(string item)
         {
-            op1 = double.Parse(Pilha.Pop().ToString());
-            op2 = double.Parse(Pilha.Pop().ToString());
+            try
+            {
+                op1 = double.Parse(Pilha.Pop().ToString());
+                op2 = double.Parse(Pilha.Pop().ToString());
+            }
+            catch (Exception e)
+            {
+                System.Console.WriteLine(e.Message);
+            }
             switch (item)
             {
                 case "+":

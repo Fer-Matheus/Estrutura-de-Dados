@@ -38,7 +38,7 @@ public class Fila
     public virtual bool InQueue(Object obj)
     {
         if (!IsFull())
-        
+
         {
             vetor[bottom] = obj;
             bottom++;
