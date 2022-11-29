@@ -15,9 +15,6 @@ namespace Codes
             FirstNo = new No();
         }
         public void adiciona(){
-            // No novo = new();
-            // novo.Proximo = FirstNo;
-            // FirstNo = novo;
             No aux = FirstNo;
             while (aux.Proximo != null)
             {
@@ -27,7 +24,7 @@ namespace Codes
         }
         public No Busca(int id){
             No aux = FirstNo;
-            while (aux.Proximo != null)
+            while (aux != null)
             {
                 if (aux.Id == id)
                     return aux;

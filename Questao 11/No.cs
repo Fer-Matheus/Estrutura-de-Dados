@@ -15,7 +15,7 @@ namespace Codes
         public string Complemento { get; set; }
         public int CEP { get; set; }
         public No Proximo { get; set; }
-        public No(int id = 0, string nome = "Teste", int idade = 1, string endereco = "Rua das Laranjeiras", int numero = 1, string complemento = "Altos", int cep = 1111111)
+        public No(int id = 1, string nome = "Teste", int idade = 1, string endereco = "Rua das Laranjeiras", int numero = 1, string complemento = "Altos", int cep = 1111111)
         {
             Id = id;
             Nome = nome;
