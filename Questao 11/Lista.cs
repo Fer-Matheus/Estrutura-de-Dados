@@ -8,10 +8,11 @@ namespace Codes
     public class Lista
     {
         public No FirstNo { get; set;}
+
         
         public Lista()
         {
-            FirstNo = new No(1);
+            FirstNo = new No();
         }
         public void adiciona(){
             // No novo = new();
@@ -22,8 +23,25 @@ namespace Codes
             {
                 aux = aux.Proximo;
             }
-            aux.Proximo = new(aux.CEP+1);
+            aux.Proximo = new(aux.Id+1);
         }
-        
+        public No Busca(int id){
+            No aux = FirstNo;
+            while (aux.Proximo != null)
+            {
+                if (aux.Id == id)
+                    return aux;
+                aux = aux.Proximo;
+            }
+            return null;
+        }
+        public void MostraLista(){
+            No aux = FirstNo;
+            while (aux != null)
+            {
+                System.Console.WriteLine(aux);
+                aux = aux.Proximo;
+            }
+        }
     }
 }

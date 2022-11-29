@@ -7,6 +7,7 @@ namespace Codes
 {
     public class No
     {
+        public int Id { get; set; }
         public string Nome { get; set; }
         public int Idade { get; set;}
         public string Endereco { get; set; }
@@ -14,9 +15,19 @@ namespace Codes
         public string Complemento { get; set; }
         public int CEP { get; set; }
         public No Proximo { get; set; }
-        public No(int id)
+        public No(int id = 0, string nome = "Teste", int idade = 1, string endereco = "Rua das Laranjeiras", int numero = 1, string complemento = "Altos", int cep = 1111111)
         {
-            CEP = id;
+            Id = id;
+            Nome = nome;
+            Idade = idade;
+            Endereco = endereco;
+            Numero = numero;
+            Complemento = complemento;
+            CEP = cep;
+        }
+        public override string ToString()
+        {
+            return $"Id: {Id}, Nome: {Nome}, Idade: {Idade}, \nEndereço: {Endereco}, Número: {Numero}, Complemento: {Complemento}, \nCEP: {CEP}" ;
         }
     }
 }

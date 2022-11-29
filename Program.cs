@@ -35,12 +35,12 @@
 
 //Questão 02 - Calculadora Polonesa
 
-CalculadoraPolonesa calc = new(10);
+// CalculadoraPolonesa calc = new(10);
 
-System.Console.WriteLine("Escreva uma função no estilo polones:");
-calc.Insere(Console.ReadLine());
+// System.Console.WriteLine("Escreva uma função no estilo polones:");
+// calc.Insere(Console.ReadLine());
 
-System.Console.WriteLine(calc.RetornaCalc());
+// System.Console.WriteLine(calc.RetornaCalc());
 
 // Questão 03 - Embaralhamento
 
@@ -99,11 +99,20 @@ System.Console.WriteLine(calc.RetornaCalc());
 // Empilhadeira
 
 // Caixa[] caixas = { new Caixa(6), new Caixa(10), new Caixa(14), new Caixa(6), new Caixa(10), new Caixa(14) };
-Caixa[] caixas = { new(6), new(6), new(10), new(10), new(14), new(14) }; // entre paremteses temos os pesos
+// Caixa[] caixas = { new(6), new(6), new(10), new(10), new(14), new(14) }; // entre paremteses temos os pesos
 
-Empilhadeira empi = new Empilhadeira(caixas.Length);
+// Empilhadeira empi = new Empilhadeira(caixas.Length);
 
-empi.RecebeCaixas(caixas);
-empi.MostrarPilhas();
-empi.Organizar();
-empi.MostrarPilhas();
+// empi.RecebeCaixas(caixas);
+// empi.MostrarPilhas();
+// empi.Organizar();
+// empi.MostrarPilhas();
+
+
+Lista lista = new();
+
+for (int i = 0; i < 10; i++)
+{
+    lista.adiciona();
+}
+lista.MostraLista();
