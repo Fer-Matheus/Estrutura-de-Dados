@@ -116,8 +116,6 @@ for (int i = 0; i < 100000; i++)
 {
     lista.adiciona();
 }
-//lista.MostraLista();
-
 TimeSpan[] tempos = new TimeSpan[100];
 DateTime inicio, fim;
 int a = 1, b = 1000;
@@ -135,4 +133,5 @@ foreach (var item in tempos)
     System.Console.WriteLine(item);
     acu+=item;
 }
+File.WriteAllLines("C:\\workspace\\CSharpProjects\\Estrutura-de-dados\\Questao 11\\dados.cvs", tempos.Select(item => item.ToString()));
 System.Console.WriteLine($"Tempo médio: {acu/100}");

@@ -28,6 +28,7 @@ namespace Codes;
                 tempos[i] = fim - inicio;
             }
             TimeSpan acu = TimeSpan.FromSeconds(0);
+            
             foreach (var item in tempos)
             {
                 System.Console.WriteLine(item);
