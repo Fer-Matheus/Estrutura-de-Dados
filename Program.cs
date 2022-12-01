@@ -1,5 +1,4 @@
 ﻿using Codes;
-
 // FilaCircular fila = new FilaCircular(10);
 
 // if (fila.IsEmpty())
@@ -139,19 +138,31 @@
 // File.WriteAllLines("C:\\workspace\\CSharpProjects\\Estrutura-de-dados\\Questao 11\\dados.cvs", tempos.Select(item => item.Milliseconds.ToString()));
 // System.Console.WriteLine($"Tempo médio: {acu / 100}");
 
-Usuario[] usuarios = { new(0, 4), new(1, 12), new(2, 20), new(3, 1), new(4, 4), new(5, 1), new(6, 1), };
-FilaTicket fila = new(10);
-foreach (var item in usuarios)
-{
-    fila.InQueue(new Ticket(item));
-}
-TimeSpan acu = TimeSpan.Zero;
-System.Console.WriteLine(acu);
-for (int i = 0; i < usuarios.Length; i++)
-{
-    Ticket x = fila.DeQueue();
-    acu += x.Realizar();
-    System.Console.WriteLine(acu);
-}
+// Usuario[] usuarios = { new(0, 4), new(1, 12), new(2, 20), new(3, 1), new(4, 4), new(5, 1), new(6, 1), };
+// FilaTicket fila = new(10);
+// foreach (var item in usuarios)
+// {
+//     fila.InQueue(new Ticket(item));
+// }
+// TimeSpan acu = TimeSpan.Zero;
+// System.Console.WriteLine(acu);
+// for (int i = 0; i < usuarios.Length; i++)
+// {
+//     Ticket x = fila.DeQueue();
+//     acu += x.Realizar();
+//     System.Console.WriteLine(acu);
+// }
 
-System.Console.WriteLine($"Média de espera da fila: {(acu / usuarios.Length)}");
+// System.Console.WriteLine($"Média de espera da fila: {(acu / usuarios.Length)}");
+
+
+ListaEncaSimp lista = new();
+
+for (int i = 1; i < 10; i++)
+{
+    lista.Insert(new(i));
+}
+lista.ShowList();
+lista.Remove(lista.Search(8));
+
+lista.ShowList();

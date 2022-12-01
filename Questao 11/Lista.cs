@@ -7,23 +7,25 @@ namespace Codes
 {
     public class Lista
     {
-        public No FirstNo { get; set;}
+        public Record FirstNo { get; set; }
 
-        
+
         public Lista()
         {
-            FirstNo = new No();
+            FirstNo = new Record();
         }
-        public void adiciona(){
-            No aux = FirstNo;
+        public void adiciona()
+        {
+            Record aux = FirstNo;
             while (aux.Proximo != null)
             {
                 aux = aux.Proximo;
             }
-            aux.Proximo = new(aux.Id+1);
+            aux.Proximo = new(aux.Id + 1);
         }
-        public No Busca(int id){
-            No aux = FirstNo;
+        public Record Busca(int id)
+        {
+            Record aux = FirstNo;
             while (aux != null)
             {
                 if (aux.Id == id)
@@ -32,8 +34,9 @@ namespace Codes
             }
             return null;
         }
-        public void MostraLista(){
-            No aux = FirstNo;
+        public void MostraLista()
+        {
+            Record aux = FirstNo;
             while (aux != null)
             {
                 System.Console.WriteLine(aux);
