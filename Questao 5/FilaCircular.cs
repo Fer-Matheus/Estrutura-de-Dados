@@ -3,7 +3,7 @@ using System.Text;
 namespace Codes;
 public class FilaCircular : Fila
 {
-    private int qtde;
+    protected int qtde;
     public FilaCircular(int tamanho) : base(tamanho + 1)
     {
         qtde = 0;
@@ -14,7 +14,7 @@ public class FilaCircular : Fila
     }
     public override bool IsFull()
     {
-        return qtde == vetor.Length-1;
+        return qtde == vetor.Length - 1;
     }
     public override bool InQueue(object obj)
     {

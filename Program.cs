@@ -109,29 +109,49 @@
 // empi.MostrarPilhas();
 
 
-Lista lista = new();
-Random random = new();
+// Lista lista = new();
+// Random random = new();
 
-for (int i = 0; i < 100000; i++)
-{
-    lista.adiciona();
-}
-TimeSpan[] tempos = new TimeSpan[100];
-DateTime inicio, fim;
-int a = 1, b = 1000;
+// for (int i = 0; i < 100000; i++)
+// {
+//     lista.adiciona();
+// }
+// TimeSpan[] tempos = new TimeSpan[100];
+// DateTime inicio, fim;
+// int a = 1, b = 1000;
 
-for (int i = 0; i < 100; i++, a+=1000, b+=1000)
+// for (int i = 0; i < 100; i++, a += 1000, b += 1000)
+// {
+//     inicio = DateTime.Now;
+//     for (int j = 0; j < 100; j++)
+//     {
+//         lista.Busca(random.Next(a, b));
+//     }
+//     fim = DateTime.Now;
+//     tempos[i] = fim - inicio;
+// }
+// TimeSpan acu = TimeSpan.FromSeconds(0);
+// foreach (var item in tempos)
+// {
+//     System.Console.WriteLine(item.Milliseconds);
+//     acu += item;
+// }
+// File.WriteAllLines("C:\\workspace\\CSharpProjects\\Estrutura-de-dados\\Questao 11\\dados.cvs", tempos.Select(item => item.Milliseconds.ToString()));
+// System.Console.WriteLine($"Tempo médio: {acu / 100}");
+
+Usuario[] usuarios = { new(0, 4), new(1, 12), new(2, 20), new(3, 1), new(4, 4), new(5, 1), new(6, 1), };
+FilaTicket fila = new(10);
+foreach (var item in usuarios)
 {
-    inicio = DateTime.Now;
-    lista.Busca(random.Next(a,b));
-    fim = DateTime.Now;
-    tempos[i] = fim - inicio;
+    fila.InQueue(new Ticket(item));
 }
-TimeSpan acu = TimeSpan.FromSeconds(0);
-foreach (var item in tempos)
+TimeSpan acu = TimeSpan.Zero;
+System.Console.WriteLine(acu);
+for (int i = 0; i < usuarios.Length; i++)
 {
-    System.Console.WriteLine(item);
-    acu+=item;
+    Ticket x = fila.DeQueue();
+    acu += x.Realizar();
+    System.Console.WriteLine(acu);
 }
-File.WriteAllLines("C:\\workspace\\CSharpProjects\\Estrutura-de-dados\\Questao 11\\dados.cvs", tempos.Select(item => item.ToString()));
-System.Console.WriteLine($"Tempo médio: {acu/100}");
+
+System.Console.WriteLine($"Média de espera da fila: {(acu / usuarios.Length)}");
