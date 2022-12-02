@@ -12,7 +12,7 @@ public class ListaEncaSimp
     {
         First = new();
     }
-    public void Insert(No no)
+    public virtual void Insert(No no)
     {
         No aux = First;
         while (aux.Proximo != null)
@@ -21,45 +21,50 @@ public class ListaEncaSimp
         }
         aux.Proximo = no;
     }
-    public No Search(int id)
+    public virtual bool Search(int id)
     {
         No aux = First;
         while (aux != null)
         {
             if (aux.Id == id)
             {
-                return aux;
+                return true;
             }
             aux = aux.Proximo;
         }
-        return null;
+        return false;
     }
-    public void Remove(No no)
+    public virtual bool Remove(int id)
     {
         No aux = First;
         while (aux != null)
         {
-            if (aux.Proximo.Equals(no))
+            if (aux.Id == id && aux.Equals(First))
             {
-
+                First = aux.Proximo;
+                aux = null;
+                return true;
+            }
+            else if (aux.Proximo != null && aux.Proximo.Id == id)
+            {
                 if (aux.Proximo.Proximo != null)
                 {
                     No aux2 = aux.Proximo.Proximo;
                     aux.Proximo = null;
                     aux.Proximo = aux2;
-                    break;
+                    return true;
                 }
                 else
                 {
                     aux.Proximo = null;
-                    break;
+                    return true;
                 }
-
             }
             aux = aux.Proximo;
         }
+        return false;
     }
-    public void ShowList()
+    public virtual void ShowList()
     {
         No aux = First;
         while (aux != null)

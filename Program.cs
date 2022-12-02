@@ -156,13 +156,11 @@
 // System.Console.WriteLine($"Média de espera da fila: {(acu / usuarios.Length)}");
 
 
-ListaEncaSimp lista = new();
+ListaEncaSimpCircu lista = new ListaEncaSimpCircu();
 
-for (int i = 1; i < 10; i++)
+for (int i = 1; i <= 11; i++)
 {
     lista.Insert(new(i));
 }
 lista.ShowList();
-lista.Remove(lista.Search(8));
-
-lista.ShowList();
+System.Console.WriteLine(lista.Search(11));
