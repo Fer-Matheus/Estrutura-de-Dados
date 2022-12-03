@@ -9,7 +9,7 @@ namespace Codes
     {
         public No2 First { get; set; }
         public No2 Last { get; set; }
-        public int Qtde {get; set;}
+        public int Qtde { get; set; }
 
         public ListaDuplamenteEncadeadaCircular()
         {
@@ -149,6 +149,22 @@ namespace Codes
             {
                 System.Console.WriteLine("Lista Vazia!");
             }
+        }
+        public void DestructList()
+        {
+            No2 aux = First;
+            while (aux.Proximo != First)
+            {
+                aux = aux.Proximo;
+            }
+            while (aux != First)
+            {
+                aux.Proximo = First.Proximo;
+                First = null;
+                First = aux.Proximo;
+            }
+            First = null;
+            Last = null;
         }
     }
 }

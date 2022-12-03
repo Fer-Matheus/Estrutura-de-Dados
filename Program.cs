@@ -197,11 +197,11 @@ lista.ShowList();
 System.Console.WriteLine($"Esse é o First: {lista.First} e esse é o Last: {lista.Last}");
 System.Console.WriteLine($"Esse é o anterior do First: {lista.First.Anterior} e esse é o proximo do First: {lista.First.Proximo}");
 System.Console.WriteLine($"Esse é o anterior do Last: {lista.Last.Anterior} e esse é o proximo do Last: {lista.Last.Proximo}");
-// System.Console.WriteLine("Destruindo...\n");
+System.Console.WriteLine("Destruindo...\n");
 
 // // lista.DestructListCirc();
-// // lista.DestructList();
-// lista.ShowList();
+lista.DestructList();
+lista.ShowList();
 
-// // lista.InsertNaoOrdenado(new(500), 1);
-// lista.ShowList();
+lista.InsertNaoOrdenado(new(500), 1);
+lista.ShowList();
