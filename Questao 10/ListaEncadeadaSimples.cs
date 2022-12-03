@@ -1,25 +1,41 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace Codes;
 
-public class ListaEncaSimp
+public class ListaEncadeadaSimples
 {
     public No First { get; set; }
-    public ListaEncaSimp()
+    public ListaEncadeadaSimples()
     {
-        First = new();
+        First = null;
     }
-    public virtual void Insert(No no)
+    public virtual void InsertNaoOrdenado(No no, int pos)
     {
-        No aux = First;
-        while (aux.Proximo != null)
+        if (First == null)
         {
-            aux = aux.Proximo;
+            First = no;
         }
-        aux.Proximo = no;
+        else
+        {
+            No aux = First;
+            while (aux != null)
+            {
+                if (aux.Id == pos)
+                {
+                    break;
+                }
+                aux = aux.Proximo;
+            }
+            if (aux == null)
+            {
+                System.Console.WriteLine("Posição informada não existe na lista!");
+            }
+            else
+            {
+                No aux2 = aux.Proximo;
+                aux.Proximo = no;
+                no.Proximo = aux2;
+            }
+        }
+
     }
     public virtual bool Search(int id)
     {
@@ -66,11 +82,29 @@ public class ListaEncaSimp
     }
     public virtual void ShowList()
     {
-        No aux = First;
-        while (aux != null)
+        if (First != null)
         {
-            System.Console.WriteLine(aux);
-            aux = aux.Proximo;
+            No aux = First;
+            while (aux != null)
+            {
+                System.Console.WriteLine(aux);
+                aux = aux.Proximo;
+            }
+        }
+        else
+        {
+            System.Console.WriteLine("Lista Vazia!");
+        }
+
+    }
+    public virtual void DestructList()
+    {
+        No aux = First;
+        while (First != null)
+        {
+            aux = First.Proximo;
+            First = null;
+            First = aux;
         }
     }
 }

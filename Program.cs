@@ -138,29 +138,70 @@
 // File.WriteAllLines("C:\\workspace\\CSharpProjects\\Estrutura-de-dados\\Questao 11\\dados.cvs", tempos.Select(item => item.Milliseconds.ToString()));
 // System.Console.WriteLine($"Tempo médio: {acu / 100}");
 
-Usuario[] usuarios = { new(0, 4), new(1, 12), new(2, 20), new(3, 1), new(4, 4), new(5, 1), new(6, 1), };
-FilaCircular fila = new(10);
-foreach (var item in usuarios)
-{
-    fila.InQueue(new Ticket(item));
-}
-TimeSpan acu = TimeSpan.Zero;
-System.Console.WriteLine(acu);
-for (int i = 0; i < usuarios.Length; i++)
-{
-    Ticket x = (Ticket)fila.DeQueue();
-    acu += x.Realizar();
-    System.Console.WriteLine(acu);
-}
-
-System.Console.WriteLine($"Média de espera da fila: {(acu / usuarios.Length)}");
-
-
-// ListaEncaSimpCircu lista = new ListaEncaSimpCircu();
-
-// for (int i = 1; i <= 11; i++)
+// Usuario[] usuarios = { new(0, 4), new(1, 12), new(2, 20), new(3, 1), new(4, 4), new(5, 1), new(6, 1), };
+// FilaCircular fila = new(10);
+// foreach (var item in usuarios)
 // {
-//     lista.Insert(new(i));
+//     fila.InQueue(new Ticket(item));
 // }
+// TimeSpan acu = TimeSpan.Zero;
+// System.Console.WriteLine(acu);
+// for (int i = 0; i < usuarios.Length; i++)
+// {
+//     Ticket x = (Ticket)fila.DeQueue();
+//     acu += x.Realizar();
+//     System.Console.WriteLine(acu);
+// }
+
+// System.Console.WriteLine($"Média de espera da fila: {(acu / usuarios.Length)}");
+
+
+// ListaEncadeadaSimplesCircular lista = new ListaEncadeadaSimplesCircular();
+// ListaEncadeadaSimples lista = new ListaEncadeadaSimples();
+ListaDuplamenteEncadeadaCircular lista = new();
+
+for (int i = 1; i <= 10; i++)
+{
+    lista.Insert(new(i));
+}
+lista.ShowList();
+
+// System.Console.WriteLine(lista.Search(2));
+
+// lista.Remove(10);
+
+// System.Console.WriteLine("Insert não ordenado:\n");
+
+// lista.Insert(new(100));
+
 // lista.ShowList();
-// System.Console.WriteLine(lista.Search(11));
+System.Console.WriteLine("Inserindo mais um elemento:\n");
+lista.Insert(new(500));
+lista.ShowList();
+
+lista.InsertNaoOrdenado(new(1000), 6);
+
+lista.ShowList();
+
+lista.Remove(6);
+lista.Insert(new(200));
+
+lista.ShowList();
+
+lista.InsertNaoOrdenado(new(1001), 6);
+
+lista.ShowList();
+
+
+
+System.Console.WriteLine($"Esse é o First: {lista.First} e esse é o Last: {lista.Last}");
+System.Console.WriteLine($"Esse é o anterior do First: {lista.First.Anterior} e esse é o proximo do First: {lista.First.Proximo}");
+System.Console.WriteLine($"Esse é o anterior do Last: {lista.Last.Anterior} e esse é o proximo do Last: {lista.Last.Proximo}");
+// System.Console.WriteLine("Destruindo...\n");
+
+// // lista.DestructListCirc();
+// // lista.DestructList();
+// lista.ShowList();
+
+// // lista.InsertNaoOrdenado(new(500), 1);
+// lista.ShowList();
