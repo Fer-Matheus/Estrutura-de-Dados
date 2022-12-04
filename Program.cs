@@ -236,9 +236,9 @@
 
 // System.Console.WriteLine(lista.SearchBlockNo(3, 3));
 
-RadixSort radix = new();
+// RadixSort radix = new();
 
-string dados = "Matheus está enlouquecendo com essa matéria.";
-string[] vetor = dados.Split(" ");
-radix.RecebeDados(vetor);
-radix.Show();
+// string dados = "Matheus está enlouquecendo com essa matéria.";
+// string[] vetor = dados.Split(" ");
+// radix.RecebeDados(vetor);
+// radix.Show();
