@@ -156,52 +156,59 @@
 // System.Console.WriteLine($"Média de espera da fila: {(acu / usuarios.Length)}");
 
 
-// ListaEncadeadaSimplesCircular lista = new ListaEncadeadaSimplesCircular();
-// ListaEncadeadaSimples lista = new ListaEncadeadaSimples();
-ListaDuplamenteEncadeadaCircular lista = new();
+// // ListaEncadeadaSimplesCircular lista = new ListaEncadeadaSimplesCircular();
+// // ListaEncadeadaSimples lista = new ListaEncadeadaSimples();
+// ListaDuplamenteEncadeadaCircular lista = new();
 
-for (int i = 1; i <= 10; i++)
-{
-    lista.Insert(new(i));
-}
-lista.ShowList();
+// for (int i = 1; i <= 10; i++)
+// {
+//     lista.Insert(new(i));
+// }
+// lista.ShowList();
 
-// System.Console.WriteLine(lista.Search(2));
+// // System.Console.WriteLine(lista.Search(2));
 
-// lista.Remove(10);
+// // lista.Remove(10);
 
-// System.Console.WriteLine("Insert não ordenado:\n");
+// // System.Console.WriteLine("Insert não ordenado:\n");
 
-// lista.Insert(new(100));
+// // lista.Insert(new(100));
+
+// // lista.ShowList();
+// System.Console.WriteLine("Inserindo mais um elemento:\n");
+// lista.Insert(new(500));
+// lista.ShowList();
+
+// lista.InsertNaoOrdenado(new(1000), 6);
 
 // lista.ShowList();
-System.Console.WriteLine("Inserindo mais um elemento:\n");
-lista.Insert(new(500));
-lista.ShowList();
 
-lista.InsertNaoOrdenado(new(1000), 6);
+// lista.Remove(6);
+// lista.Insert(new(200));
 
-lista.ShowList();
+// lista.ShowList();
 
-lista.Remove(6);
-lista.Insert(new(200));
+// lista.InsertNaoOrdenado(new(1001), 6);
 
-lista.ShowList();
-
-lista.InsertNaoOrdenado(new(1001), 6);
-
-lista.ShowList();
+// lista.ShowList();
 
 
 
-System.Console.WriteLine($"Esse é o First: {lista.First} e esse é o Last: {lista.Last}");
-System.Console.WriteLine($"Esse é o anterior do First: {lista.First.Anterior} e esse é o proximo do First: {lista.First.Proximo}");
-System.Console.WriteLine($"Esse é o anterior do Last: {lista.Last.Anterior} e esse é o proximo do Last: {lista.Last.Proximo}");
-System.Console.WriteLine("Destruindo...\n");
+// System.Console.WriteLine($"Esse é o First: {lista.First} e esse é o Last: {lista.Last}");
+// System.Console.WriteLine($"Esse é o anterior do First: {lista.First.Anterior} e esse é o proximo do First: {lista.First.Proximo}");
+// System.Console.WriteLine($"Esse é o anterior do Last: {lista.Last.Anterior} e esse é o proximo do Last: {lista.Last.Proximo}");
+// System.Console.WriteLine("Destruindo...\n");
 
-// // lista.DestructListCirc();
-lista.DestructList();
-lista.ShowList();
+// // // lista.DestructListCirc();
+// lista.DestructList();
+// lista.ShowList();
 
-lista.InsertNaoOrdenado(new(500), 1);
-lista.ShowList();
+// lista.InsertNaoOrdenado(new(500), 1);
+// lista.ShowList();
+
+CalculadoraPolonesaAvançada calc = new(10);
+
+System.Console.WriteLine("Escreva uma função no estilo polones:\n OBS: Lembre de por espaços entre os operandos!\n");
+calc.Insere(Console.ReadLine());
+
+System.Console.WriteLine(calc.RetornaCalc());

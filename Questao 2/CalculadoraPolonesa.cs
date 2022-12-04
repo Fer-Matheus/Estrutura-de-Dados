@@ -9,8 +9,8 @@ namespace Codes
     public class CalculadoraPolonesa
     {
         public Pilha Pilha { get; set; }
-        private double op1, op2;
-        private double result;
+        protected double op1, op2;
+        protected double result;
         public CalculadoraPolonesa(int tamanho)
         {
             Pilha = new(tamanho);
@@ -38,17 +38,30 @@ namespace Codes
             return result;
         }
 
-        private void Action(string item)
+        protected void Action(string item)
         {
             try
             {
                 op1 = double.Parse(Pilha.Pop().ToString());
+            }
+            catch (Exception e)
+            {
+
+            }
+            try
+            {
                 op2 = double.Parse(Pilha.Pop().ToString());
             }
             catch (Exception e)
             {
-                System.Console.WriteLine(e.Message);
+
             }
+
+            EscolheOperacao(item);
+        }
+
+        protected virtual void EscolheOperacao(string item)
+        {
             switch (item)
             {
                 case "+":
