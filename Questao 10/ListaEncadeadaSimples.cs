@@ -2,9 +2,11 @@ namespace Codes;
 
 public class ListaEncadeadaSimples
 {
+    public int Id { get; set; }
     public No First { get; set; }
-    public ListaEncadeadaSimples()
+    public ListaEncadeadaSimples(int id = 0)
     {
+        Id = id;
         First = null;
     }
     public virtual void InsertNaoOrdenado(No no, int pos)

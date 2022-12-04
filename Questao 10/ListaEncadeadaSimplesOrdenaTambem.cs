@@ -7,6 +7,10 @@ namespace Codes;
 
 public class ListaEncadeadaSimplesOrdenaTambem : ListaEncadeadaSimples
 {
+    public ListaEncadeadaSimplesOrdenaTambem(int id = 0) : base(id)
+    {
+
+    }
     public virtual void Insert(No no)
     {
         if (First == null)

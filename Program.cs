@@ -213,25 +213,32 @@
 
 // System.Console.WriteLine(calc.RetornaCalc());
 
-ListaBlocos lista = new();
+// ListaBlocos lista = new();
 
-for (int i = 0; i < 5; i++)
-{
-    lista.InsertBlock(new(i, 5));
-}
-lista.ShowListBlock();
-lista.ShowListBlockNo();
+// for (int i = 0; i < 5; i++)
+// {
+//     lista.InsertBlock(new(i, 5));
+// }
+// lista.ShowListBlock();
+// lista.ShowListBlockNo();
 
-for (int i = 0; i < 5; i++)
-{
-    for (int j = 0; j < 5; j++)
-    {
-        lista.InsertNo(i, new(j));
-    }
-}
+// for (int i = 0; i < 5; i++)
+// {
+//     for (int j = 0; j < 5; j++)
+//     {
+//         lista.InsertNo(i, new(j));
+//     }
+// }
 
-lista.ShowListBlockNo();
+// lista.ShowListBlockNo();
 
-System.Console.WriteLine(lista.SearchBlock(3));
+// System.Console.WriteLine(lista.SearchBlock(3));
 
-System.Console.WriteLine(lista.SearchBlockNo(3, 3));
+// System.Console.WriteLine(lista.SearchBlockNo(3, 3));
+
+RadixSort radix = new();
+
+string dados = "Matheus está enlouquecendo com essa matéria.";
+string[] vetor = dados.Split(" ");
+radix.RecebeDados(vetor);
+radix.Show();

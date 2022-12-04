@@ -44,7 +44,7 @@ namespace Codes
             {
                 op1 = double.Parse(Pilha.Pop().ToString());
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
@@ -52,7 +52,7 @@ namespace Codes
             {
                 op2 = double.Parse(Pilha.Pop().ToString());
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
