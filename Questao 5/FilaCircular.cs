@@ -55,6 +55,23 @@ public class FilaCircular : Fila
         }
         return "Fila Vazia!";
     }
+    public string SearchQueueNo(int obj)
+    {
+        if (!IsEmpty())
+        {
+            int aux = top;
+            for (int i = top; i != bottom; i = (i + 1) % vetor.Length)
+            {
+                No aux2 = (No)vetor[i];
+                if (aux2.Id == obj)
+                {
+                    return $"Item: {aux2} na posição: {i} da fila.";
+                }
+            }
+            return $"Item: {obj} não encontrado na fila!";
+        }
+        return "Fila Vazia!";
+    }
     public new void ShowQueue()
     {
         if (!IsEmpty())
@@ -66,5 +83,33 @@ public class FilaCircular : Fila
         }
         else
             System.Console.WriteLine("Fila Vazia!");
+        System.Console.WriteLine();
+    }
+    public void DestructQueue()
+    {
+        if (!IsEmpty())
+        {
+            for (int i = top; i != bottom; i = (i + 1) % vetor.Length)
+            {
+                vetor[i] = null;
+            }
+        }
+    }
+    public Object GetQueue(int obj)
+    {
+        if (!IsEmpty())
+        {
+            int aux = top;
+            for (int i = top; i != bottom; i = (i + 1) % vetor.Length)
+            {
+                No aux2 = (No)vetor[i];
+                if (aux2.Id == obj)
+                {
+                    return aux2;
+                }
+            }
+            return null;
+        }
+        return null;
     }
 }

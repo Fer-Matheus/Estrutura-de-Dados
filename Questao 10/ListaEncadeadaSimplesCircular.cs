@@ -42,18 +42,18 @@ public class ListaEncadeadaSimplesCircular : ListaEncadeadaSimplesOrdenaTambem
         no.Proximo = aux2;
     }
 
-    public override bool Search(int id)
+    public override No Search(int id)
     {
         No aux = First;
         do
         {
             if (aux.Id == id)
             {
-                return true;
+                return aux;
             }
             aux = aux.Proximo;
         } while (aux != First);
-        return false;
+        return null;
     }
     public override bool Remove(int id)
     {

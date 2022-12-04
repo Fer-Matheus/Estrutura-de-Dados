@@ -40,6 +40,10 @@ namespace Codes
                     Pilha.Push(Math.Exp(op2));
                     Pilha.Push(op1);
                     break;
+                case "^":
+                    Pilha.Push(1/op2);
+                    Pilha.Push(op1);
+                    break;
                 default:
                     System.Console.WriteLine("Operação não definida!");
                     break;

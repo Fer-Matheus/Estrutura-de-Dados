@@ -70,18 +70,18 @@ namespace Codes
                 Qtde++;
             }
         }
-        public bool Search(int id)
+        public No2 Search(int id)
         {
             No2 aux = First;
             do
             {
                 if (aux.Id == id)
                 {
-                    return true;
+                    return aux;
                 }
                 aux = aux.Proximo;
             } while (aux != First);
-            return false;
+            return aux;
         }
         public bool Remove(int id)
         {

@@ -37,18 +37,18 @@ public class ListaEncadeadaSimples
         }
 
     }
-    public virtual bool Search(int id)
+    public virtual No Search(int id)
     {
         No aux = First;
         while (aux != null)
         {
             if (aux.Id == id)
             {
-                return true;
+                return aux;
             }
             aux = aux.Proximo;
         }
-        return false;
+        return null;
     }
     public virtual bool Remove(int id)
     {

@@ -206,9 +206,32 @@
 // lista.InsertNaoOrdenado(new(500), 1);
 // lista.ShowList();
 
-CalculadoraPolonesaAvançada calc = new(10);
+// CalculadoraPolonesaAvançada calc = new(10);
 
-System.Console.WriteLine("Escreva uma função no estilo polones:\n OBS: Lembre de por espaços entre os operandos!\n");
-calc.Insere(Console.ReadLine());
+// System.Console.WriteLine("Escreva uma função no estilo polones:\n OBS: Lembre de por espaços entre os operandos!\n");
+// calc.Insere(Console.ReadLine());
 
-System.Console.WriteLine(calc.RetornaCalc());
+// System.Console.WriteLine(calc.RetornaCalc());
+
+ListaBlocos lista = new();
+
+for (int i = 0; i < 5; i++)
+{
+    lista.InsertBlock(new(i, 5));
+}
+lista.ShowListBlock();
+lista.ShowListBlockNo();
+
+for (int i = 0; i < 5; i++)
+{
+    for (int j = 0; j < 5; j++)
+    {
+        lista.InsertNo(i, new(j));
+    }
+}
+
+lista.ShowListBlockNo();
+
+System.Console.WriteLine(lista.SearchBlock(3));
+
+System.Console.WriteLine(lista.SearchBlockNo(3, 3));
