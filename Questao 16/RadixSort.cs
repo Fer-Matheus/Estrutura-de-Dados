@@ -9,25 +9,33 @@ namespace Codes
 {
     public class RadixSort
     {
-        public ListaEncadeadaSimplesOrdenaTambem[] Listas { get; set; }
+        public ListRadix[] Listas { get; set; }
         public int Max { get; set; }
         private List<string> dadosCru, dadosMeio;
         private List<string> dadosHexa;
 
         public RadixSort()
         {
-            Listas = new ListaEncadeadaSimplesOrdenaTambem[16];
+            Listas = new ListRadix[128];
             dadosCru = new();
             dadosMeio = new();
             dadosHexa = new();
             Max = 0;
-            IniciarListas();
         }
-        private void IniciarListas()
+        private void IniciarListas(int intervalo)
         {
-            for (int i = 0; i < Listas.Length; i++)
+            foreach (var item in dadosHexa)
             {
-                Listas[i] = new(i);
+                int a = Max - intervalo * 2;
+                int b = Max - intervalo * 2 + 1;
+                if (Listas[Int16.Parse((item[a]) + "" + item[b])] == null)
+                {
+                    Listas[Int16.Parse(item[a] + "" + item[b])] = new(new(item));
+                }
+                else
+                {
+                    Listas[Int16.Parse(item[a] + "" + item[b])].Insert(new(item));
+                }
             }
         }
         public void RecebeDados(string[] dado)
@@ -38,10 +46,45 @@ namespace Codes
             }
             PreencheListHexa();
         }
-        public string Sort()
+        public void Sort()
         {
-            
-            return "";
+            for (int i = 1; i <= Max / 2; i++)
+            {
+                IniciarListas(i);
+                int pos = 0;
+                for (int j = 0; j < 128; j++)
+                {
+                    while (Listas[j] != null && Listas[j].First != null)
+                    {
+                        dadosHexa.Insert(pos, Listas[j].RemoveFirst().Nome);
+                        pos++;
+                    }
+                }
+            }
+        }
+        public void ShowSort()
+        {
+            foreach (var item in dadosHexa)
+            {
+                string result = "";
+                for (int i = 1; i <= (item.Length - 1) / 2; i++)
+                {
+                    if (item[i * 2 - 1] == '0' && item[i * 2] == '0')
+                    {
+                        continue;
+                    }
+                    result += Char.ToString(item[i * 2 - 1]) + Char.ToString(item[i * 2]);
+                }
+                string output = "";
+                char[] vetor = result.ToCharArray();
+                for (int i = 0; i < vetor.Length; i += 2)
+                {
+                    string aux = "" + vetor[i] + "" + vetor[i + 1];
+                    char c = (char)int.Parse(aux);
+                    output += c;
+                }
+                System.Console.WriteLine(output);
+            }
         }
         public string ConverteEmHexa(string item)
         {
@@ -67,7 +110,7 @@ namespace Codes
                 {
                     aux += 0;
                 }
-                dadosHexa.Add("0" + aux);
+                dadosHexa.Add("0" + aux.ToUpper());
             }
             dadosMeio = null;
         }

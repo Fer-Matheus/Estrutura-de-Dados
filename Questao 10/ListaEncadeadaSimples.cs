@@ -82,6 +82,11 @@ public class ListaEncadeadaSimples
         }
         return false;
     }
+    public No RemoveFirst(){
+        No aux = First;
+        First = First.Proximo;
+        return aux;
+    }
     public virtual void ShowList()
     {
         if (First != null)

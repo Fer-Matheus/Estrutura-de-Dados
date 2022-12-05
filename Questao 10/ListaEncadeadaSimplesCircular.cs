@@ -33,7 +33,8 @@ public class ListaEncadeadaSimplesCircular : ListaEncadeadaSimplesOrdenaTambem
         No aux = First;
         do
         {
-            if(aux.Id == pos){
+            if (aux.Id == pos)
+            {
                 break;
             }
         } while (aux.Proximo != First);
